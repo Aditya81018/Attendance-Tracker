@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Attendance Tracker Client</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <div id="screen">
+    <div class="row">
+      <div class="section" id="log-section"></div>
+      <div class="section" id="motion-section">
+        <div id="indoor-label" class="label">INDOOR</div>
+        <div id="outdoor-label" class="label">OUTDOOR</div>
+        <div id="indoor-rfid" class="rfid">SCANNER</div>
+        <div id="outdoor-rfid" class="rfid">SCANNER</div>
+        <div id="indoor-ir" class="ir"></div>
+        <div id="outdoor-ir" class="ir"></div>
+        <div id="left-wall" class="wall"></div>
+        <div id="right-wall" class="wall"></div>
+        <div id="motion-log" class="log">MOTION</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="section"></div>
+      <div class="section"></div>
+    </div>
+  </div>
+  <script src="./main.js" type="module"></script>
+</body>
+
+</html>
