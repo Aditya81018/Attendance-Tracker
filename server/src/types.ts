@@ -1,21 +1,31 @@
 export type Location = "INDOOR" | "OUTDOOR";
 
 export interface RfidScanRecord {
-  recordedUID: string;
+  id: string;
   recordedAt: string;
+  recordedUID: string;
   scannerID: string;
   location: Location;
 }
 
 export interface IrScanRecord {
+  id: string;
+  recordedAt: string;
   indoorStatus: boolean;
   outdoorStatus: boolean;
-  recordedAt: string;
   scannerID: string;
 }
 
 export interface MotionRecord {
-  towards: Location;
+  id: string;
   recordedAt: string;
+  towards: Location;
   scannerID: string;
+}
+
+export interface StudentsPresenceRecord {
+  id: string;
+  recordedAt: string;
+  location: Location;
+  studentId: string;
 }

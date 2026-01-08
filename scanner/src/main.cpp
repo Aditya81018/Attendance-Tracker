@@ -1,4 +1,5 @@
 #include "HardwareSerial.h"
+#include "esp32-hal-gpio.h"
 #include <Arduino.h>
 #include <MFRC522DriverSPI.h>
 #include <MFRC522v2.h>
@@ -15,6 +16,7 @@
 #define OUT_IR_PIN 15
 #define IN_RFID_PIN 5
 #define OUT_RFID_PIN 17
+#define BUZZER_PIN 13
 
 #define SSID "iQOO_Z10_X"
 #define PASSPHRASE "iQooZ10x"
@@ -45,6 +47,8 @@ int lastOutIrRecord = 1;
 void setup() {
   pinMode(IN_IR_PIN, INPUT);
   pinMode(OUT_IR_PIN, INPUT);
+  pinMode(BUZZER_PIN, OUTPUT);
+
   Serial.begin(115200);
 
   inRfid.PCD_Init();
@@ -87,8 +91,6 @@ void loop() {
     lastOutIrRecord = outIr;
     sendIRsData(inIr, outIr);
   }
-
-  delay(10);
 }
 
 String readRfid(MFRC522 &rfid) {
@@ -122,6 +124,7 @@ void sendIRsData(int leftIr, int rightIr) {
 }
 
 void onWsEvent(WStype_t type, uint8_t *payload, size_t length) {
+  String msg = String((char *)payload);
   switch (type) {
   case WStype_CONNECTED:
     Serial.println("WS CONNECTED");
@@ -130,6 +133,13 @@ void onWsEvent(WStype_t type, uint8_t *payload, size_t length) {
 
   case WStype_TEXT:
     Serial.printf("WS MESSAGE: %s\n", payload);
+    if (msg == "buzzer on") {
+      digitalWrite(BUZZER_PIN, HIGH);
+    }
+    if (msg == "buzzer off") {
+      digitalWrite(BUZZER_PIN, LOW);
+    }
+
     break;
 
   case WStype_DISCONNECTED:

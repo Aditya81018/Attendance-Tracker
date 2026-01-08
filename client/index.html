@@ -14,6 +14,7 @@
       <div class="section" id="log-section"></div>
       <div class="section" id="motion-section">
         <div id="indoor-label" class="label">INDOOR</div>
+        <div id="students-indoor-label" class="label"></div>
         <div id="outdoor-label" class="label">OUTDOOR</div>
         <div id="indoor-rfid" class="rfid">SCANNER</div>
         <div id="outdoor-rfid" class="rfid">SCANNER</div>
@@ -21,12 +22,17 @@
         <div id="outdoor-ir" class="ir"></div>
         <div id="left-wall" class="wall"></div>
         <div id="right-wall" class="wall"></div>
-        <div id="motion-log" class="log">MOTION</div>
+        <div id="motion-log" class="log"></div>
       </div>
     </div>
     <div class="row">
-      <div class="section"></div>
-      <div class="section"></div>
+      <div class="section" id="control-section">
+        <div class="button-group">
+          <button id="beep-btn">Beep</button>
+          <button id="buzzer-btn">Buzzer</button>
+        </div>
+      </div>
+      <div id="students-presence-section" class="section"></div>
     </div>
   </div>
   <script src="./main.js" type="module"></script>

@@ -58,7 +58,7 @@ body,
   position: relative;
   overflow: hidden;
 
-  &>div {
+  & > div {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -66,7 +66,8 @@ body,
   }
 
   /* LABELS */
-  .label {}
+  .label {
+  }
 
   #indoor-label {
     top: 25%;
@@ -74,6 +75,16 @@ body,
 
   #outdoor-label {
     bottom: 25%;
+  }
+
+  #students-indoor-label {
+    top: 10%;
+    display: flex;
+    gap: 1rem;
+
+    & .student-label {
+      width: fit-content;
+    }
   }
 
   /* RFIDS */
@@ -153,10 +164,42 @@ body,
   }
 
   /* LOGS */
-  .log {}
+  .log {
+  }
 
   #motion-log {
-    font-size: xx-large;
+    font-size: 2rem;
     rotate: 90deg;
+    color: #55f;
+    font-weight: 400;
+  }
+}
+
+button {
+  padding: 0.25rem 0.5rem;
+  width: fit-content;
+  font-size: large;
+  border-radius: 0.25rem;
+}
+
+#control-section {
+  & .button-group {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  & #beep-btn {
+    background-color: #5f5;
+  }
+
+  & #buzzer-btn {
+    background-color: #f55;
+  }
+}
+
+#students-presence-section {
+  .students-presence-log {
+    display: flex;
+    /* gap: 4rem; */
   }
 }
