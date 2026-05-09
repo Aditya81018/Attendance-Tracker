@@ -63,6 +63,7 @@ The codebase so far has code for -
 
 ---
 ### Future goals for the prototype 
+1. Add multiple scanners and improve the system to support all of them together.
 1. Store a timetable and give proper attendance record for every student showing all the classes it attended.
 2. Have several sections, with their own timetable, with several classes in their own rooms, having several doors and scanner sets working together on one server.
 3. Give more control on the client side the adminstrate the system better with more control.
